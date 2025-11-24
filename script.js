@@ -7,6 +7,14 @@ let userIdCounter = 1;
 let taskIdCounter = 1;
 let projectIdCounter = 1;
 
+// ==================== ACTUALIZAR CONTADORES ====================
+
+function updateCounters() {
+    document.getElementById('userCount').textContent = users.length;
+    document.getElementById('taskCount').textContent = tasks.length;
+    document.getElementById('projectCount').textContent = projects.length;
+}
+
 // ==================== FUNCIÓN DE VALIDACIÓN ====================
 
 function validateEmail(email) {
@@ -37,9 +45,12 @@ function addUser() {
     };
 
     users.push(user);
+
     document.getElementById('userName').value = '';
     document.getElementById('userEmail').value = '';
+
     renderUsers();
+    updateCounters();
 }
 
 function editUser(id) {
@@ -62,12 +73,14 @@ function editUser(id) {
     }
 
     renderUsers();
+    updateCounters();
 }
 
 function deleteUser(id) {
     if (confirm('¿Estás seguro de eliminar este usuario?')) {
         users = users.filter(u => u.id !== id);
         renderUsers();
+        updateCounters();
     }
 }
 
@@ -115,10 +128,13 @@ function addTask() {
     };
 
     tasks.push(task);
+
     document.getElementById('taskTitle').value = '';
     document.getElementById('taskDescription').value = '';
     document.getElementById('taskPriority').value = 'baja';
+
     renderTasks();
+    updateCounters();
 }
 
 function editTask(id) {
@@ -140,12 +156,14 @@ function editTask(id) {
     }
 
     renderTasks();
+    updateCounters();
 }
 
 function deleteTask(id) {
     if (confirm('¿Estás seguro de eliminar esta tarea?')) {
         tasks = tasks.filter(t => t.id !== id);
         renderTasks();
+        updateCounters();
     }
 }
 
@@ -187,9 +205,12 @@ function addProject() {
     };
 
     projects.push(project);
+
     document.getElementById('projectName').value = '';
     document.getElementById('projectDate').value = '';
+
     renderProjects();
+    updateCounters();
 }
 
 function editProject(id) {
@@ -207,12 +228,14 @@ function editProject(id) {
     }
 
     renderProjects();
+    updateCounters();
 }
 
 function deleteProject(id) {
     if (confirm('¿Estás seguro de eliminar este proyecto?')) {
         projects = projects.filter(p => p.id !== id);
         renderProjects();
+        updateCounters();
     }
 }
 
@@ -241,4 +264,5 @@ window.addEventListener('DOMContentLoaded', () => {
     renderUsers();
     renderTasks();
     renderProjects();
+    updateCounters();
 });

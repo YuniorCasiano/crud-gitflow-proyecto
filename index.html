@@ -11,6 +11,7 @@
         <header>
             <h1>Sistema de Gestión de Tareas</h1>
         </header>
+        
         <div class="clear-all-container">
     <button onclick="clearAllData()" class="clear-all-btn">Limpiar Todos los Datos</button>
 </div>
@@ -19,6 +20,9 @@
         <section class="crud-section">
             <h2>Gestión de Usuarios</h2>
             <p class="counter">Total de usuarios: <span id="userCount">0</span></p>
+            <div class="search-container">
+    <input type="text" id="taskSearch" placeholder="Buscar tareas por título..." onkeyup="filterTasks()">
+</div>
             <div class="form-container">
                 <input type="text" id="userName" placeholder="Nombre del usuario">
                 <input type="email" id="userEmail" placeholder="Email del usuario">

@@ -266,3 +266,23 @@ window.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     updateCounters();
 });
+// ==================== LIMPIAR TODOS LOS DATOS ====================
+
+function clearAllData() {
+    if (confirm('¿Estás seguro de eliminar TODOS los datos? Esta acción no se puede deshacer.')) {
+        users = [];
+        tasks = [];
+        projects = [];
+        
+        userIdCounter = 1;
+        taskIdCounter = 1;
+        projectIdCounter = 1;
+        
+        renderUsers();
+        renderTasks();
+        renderProjects();
+        updateCounters();
+        
+        alert('Todos los datos han sido eliminados');
+    }
+}

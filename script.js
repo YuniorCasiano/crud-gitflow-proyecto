@@ -286,3 +286,29 @@ function clearAllData() {
         alert('Todos los datos han sido eliminados');
     }
 }
+// ==================== FILTRAR TAREAS ====================
+
+function filterTasks() {
+    const searchTerm = document.getElementById('taskSearch').value.toLowerCase().trim();
+    const tbody = document.getElementById('taskTableBody');
+    tbody.innerHTML = '';
+
+    const filteredTasks = tasks.filter(task => 
+        task.title.toLowerCase().includes(searchTerm)
+    );
+
+    filteredTasks.forEach(task => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${task.id}</td>
+            <td>${task.title}</td>
+            <td>${task.description}</td>
+            <td><span class="priority-${task.priority}">${task.priority.toUpperCase()}</span></td>
+            <td>
+                <button class="action-btn" onclick="editTask(${task.id})">Editar</button>
+                <button class="action-btn delete-btn" onclick="deleteTask(${task.id})">Eliminar</button>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+}

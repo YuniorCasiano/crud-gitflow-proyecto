@@ -163,3 +163,19 @@ table td {
 .clear-all-btn:hover {
     background-color: #b71c1c;
 }
+.search-container {
+    margin-bottom: 15px;
+    max-width: 500px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #333;
+}

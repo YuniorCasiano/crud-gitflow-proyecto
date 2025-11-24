@@ -134,3 +134,14 @@ table td {
     color: #388e3c;
     font-weight: 600;
 }
+.counter {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.counter span {
+    color: #333;
+    font-weight: 700;
+}

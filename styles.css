@@ -179,3 +179,20 @@ table td {
     outline: none;
     border-color: #333;
 }
+.sort-container {
+    margin-bottom: 15px;
+}
+
+.sort-btn {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.sort-btn:hover {
+    background-color: #555;
+}

@@ -7,6 +7,13 @@ let userIdCounter = 1;
 let taskIdCounter = 1;
 let projectIdCounter = 1;
 
+// ==================== FUNCIÓN DE VALIDACIÓN ====================
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
 // ==================== CRUD DE USUARIOS ====================
 
 function addUser() {
@@ -15,6 +22,11 @@ function addUser() {
 
     if (name === '' || email === '') {
         alert('Por favor completa todos los campos');
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert('Por favor ingresa un email válido');
         return;
     }
 
@@ -41,7 +53,12 @@ function editUser(id) {
         user.name = newName.trim();
     }
     if (newEmail !== null && newEmail.trim() !== '') {
-        user.email = newEmail.trim();
+        if (validateEmail(newEmail.trim())) {
+            user.email = newEmail.trim();
+        } else {
+            alert('Email inválido');
+            return;
+        }
     }
 
     renderUsers();
@@ -82,6 +99,11 @@ function addTask() {
 
     if (title === '' || description === '') {
         alert('Por favor completa todos los campos');
+        return;
+    }
+
+    if (title.length < 3) {
+        alert('El título debe tener al menos 3 caracteres');
         return;
     }
 

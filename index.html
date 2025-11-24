@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Gestión de Tareas</h1>
+        </header>
+
+      
+        <section class="crud-section">
+            <h2>Gestión de Usuarios</h2>
+            <div class="form-container">
+                <input type="text" id="userName" placeholder="Nombre del usuario">
+                <input type="email" id="userEmail" placeholder="Email del usuario">
+                <button onclick="addUser()">Agregar Usuario</button>
+            </div>
+            <div class="table-container">
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        <section class="crud-section">
+            <h2>Gestión de Tareas</h2>
+            <div class="form-container">
+                <input type="text" id="taskTitle" placeholder="Título de la tarea">
+                <input type="text" id="taskDescription" placeholder="Descripción">
+                <select id="taskPriority">
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                </select>
+                <button onclick="addTask()">Agregar Tarea</button>
+            </div>
+            <div class="table-container">
+                <table id="taskTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Prioridad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="taskTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        <section class="crud-section">
+            <h2>Gestión de Proyectos</h2>
+            <div class="form-container">
+                <input type="text" id="projectName" placeholder="Nombre del proyecto">
+                <input type="date" id="projectDate">
+                <button onclick="addProject()">Agregar Proyecto</button>
+            </div>
+            <div class="table-container">
+                <table id="projectTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

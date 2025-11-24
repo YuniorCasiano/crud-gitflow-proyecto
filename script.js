@@ -312,3 +312,15 @@ function filterTasks() {
         tbody.appendChild(row);
     });
 }
+// ==================== ORDENAR PROYECTOS POR FECHA ====================
+
+function sortProjectsByDate() {
+    projects.sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateA - dateB;
+    });
+    
+    renderProjects();
+    alert('Proyectos ordenados por fecha (más antiguos primero)');
+}

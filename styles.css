@@ -145,3 +145,21 @@ table td {
     color: #333;
     font-weight: 700;
 }
+.clear-all-container {
+    margin-bottom: 30px;
+}
+
+.clear-all-btn {
+    padding: 12px 24px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.clear-all-btn:hover {
+    background-color: #b71c1c;
+}
